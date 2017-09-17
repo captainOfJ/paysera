@@ -7,21 +7,47 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C4387F6B1F6EA6AE00E1337F /* InfoDialogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4387F6A1F6EA6AE00E1337F /* InfoDialogVC.swift */; };
+		C4387F6D1F6EE51000E1337F /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4387F6C1F6EE51000E1337F /* Notifications.swift */; };
 		C443EA311F6CEF6E000634E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C443EA301F6CEF6E000634E9 /* AppDelegate.swift */; };
-		C443EA331F6CEF6E000634E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C443EA321F6CEF6E000634E9 /* ViewController.swift */; };
+		C443EA331F6CEF6E000634E9 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C443EA321F6CEF6E000634E9 /* MainVC.swift */; };
 		C443EA361F6CEF6E000634E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C443EA341F6CEF6E000634E9 /* Main.storyboard */; };
 		C443EA381F6CEF6E000634E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C443EA371F6CEF6E000634E9 /* Assets.xcassets */; };
 		C443EA3B1F6CEF6E000634E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C443EA391F6CEF6E000634E9 /* LaunchScreen.storyboard */; };
+		C46FBFAC1F6CF42E006412F1 /* Bank.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46FBFAB1F6CF42E006412F1 /* Bank.swift */; };
+		C4957FC31F6D966D000C5439 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4957FC21F6D966D000C5439 /* RoundButton.swift */; };
+		C4957FC51F6DA9B2000C5439 /* BuyCurrencyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4957FC41F6DA9B2000C5439 /* BuyCurrencyVC.swift */; };
+		C4957FC71F6DAA16000C5439 /* SellCurrencyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4957FC61F6DAA16000C5439 /* SellCurrencyVC.swift */; };
+		C4957FC91F6DAD90000C5439 /* SupportedCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4957FC81F6DAD90000C5439 /* SupportedCurrency.swift */; };
+		C4CB62F51F6E5A5E002D2C6D /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB62F41F6E5A5E002D2C6D /* Currency.swift */; };
+		C4CB62F71F6E5AEA002D2C6D /* AvailableCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB62F61F6E5AEA002D2C6D /* AvailableCurrency.swift */; };
+		C4CB62F91F6E5D47002D2C6D /* Preferance.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB62F81F6E5D47002D2C6D /* Preferance.swift */; };
+		C4CB62FB1F6E8768002D2C6D /* TextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB62FA1F6E8768002D2C6D /* TextFieldStyle.swift */; };
+		E970F85A2C5F24676A9CC319 /* Pods_paysera.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC943433F87C29B1DED17887 /* Pods_paysera.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BC943433F87C29B1DED17887 /* Pods_paysera.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_paysera.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4387F6A1F6EA6AE00E1337F /* InfoDialogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoDialogVC.swift; sourceTree = "<group>"; };
+		C4387F6C1F6EE51000E1337F /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		C443EA2D1F6CEF6E000634E9 /* paysera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = paysera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C443EA301F6CEF6E000634E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C443EA321F6CEF6E000634E9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C443EA321F6CEF6E000634E9 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		C443EA351F6CEF6E000634E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C443EA371F6CEF6E000634E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C443EA3A1F6CEF6E000634E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C443EA3C1F6CEF6E000634E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C46FBFAB1F6CF42E006412F1 /* Bank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bank.swift; sourceTree = "<group>"; };
+		C4957FC21F6D966D000C5439 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		C4957FC41F6DA9B2000C5439 /* BuyCurrencyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyCurrencyVC.swift; sourceTree = "<group>"; };
+		C4957FC61F6DAA16000C5439 /* SellCurrencyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellCurrencyVC.swift; sourceTree = "<group>"; };
+		C4957FC81F6DAD90000C5439 /* SupportedCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportedCurrency.swift; sourceTree = "<group>"; };
+		C4CB62F41F6E5A5E002D2C6D /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		C4CB62F61F6E5AEA002D2C6D /* AvailableCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableCurrency.swift; sourceTree = "<group>"; };
+		C4CB62F81F6E5D47002D2C6D /* Preferance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferance.swift; sourceTree = "<group>"; };
+		C4CB62FA1F6E8768002D2C6D /* TextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldStyle.swift; sourceTree = "<group>"; };
+		D2EF1E99CAEFA7382BAC1E43 /* Pods-paysera.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-paysera.release.xcconfig"; path = "Pods/Target Support Files/Pods-paysera/Pods-paysera.release.xcconfig"; sourceTree = "<group>"; };
+		E54111E5A7F2682C579FC78B /* Pods-paysera.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-paysera.debug.xcconfig"; path = "Pods/Target Support Files/Pods-paysera/Pods-paysera.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +55,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E970F85A2C5F24676A9CC319 /* Pods_paysera.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9205ACF4F435BB322AD74DDF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BC943433F87C29B1DED17887 /* Pods_paysera.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B365DB2ACCE9FA486BE08827 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E54111E5A7F2682C579FC78B /* Pods-paysera.debug.xcconfig */,
+				D2EF1E99CAEFA7382BAC1E43 /* Pods-paysera.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		C443EA241F6CEF6E000634E9 = {
 			isa = PBXGroup;
 			children = (
 				C443EA2F1F6CEF6E000634E9 /* paysera */,
 				C443EA2E1F6CEF6E000634E9 /* Products */,
+				B365DB2ACCE9FA486BE08827 /* Pods */,
+				9205ACF4F435BB322AD74DDF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +100,49 @@
 		C443EA2F1F6CEF6E000634E9 /* paysera */ = {
 			isa = PBXGroup;
 			children = (
+				C4957FC11F6D9623000C5439 /* Controller */,
+				C4957FC01F6D961A000C5439 /* View */,
+				C4957FBF1F6D960C000C5439 /* Model */,
 				C443EA301F6CEF6E000634E9 /* AppDelegate.swift */,
-				C443EA321F6CEF6E000634E9 /* ViewController.swift */,
 				C443EA341F6CEF6E000634E9 /* Main.storyboard */,
 				C443EA371F6CEF6E000634E9 /* Assets.xcassets */,
 				C443EA391F6CEF6E000634E9 /* LaunchScreen.storyboard */,
 				C443EA3C1F6CEF6E000634E9 /* Info.plist */,
 			);
 			path = paysera;
+			sourceTree = "<group>";
+		};
+		C4957FBF1F6D960C000C5439 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C4957FC81F6DAD90000C5439 /* SupportedCurrency.swift */,
+				C4CB62F41F6E5A5E002D2C6D /* Currency.swift */,
+				C4CB62F61F6E5AEA002D2C6D /* AvailableCurrency.swift */,
+				C4CB62F81F6E5D47002D2C6D /* Preferance.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C4957FC01F6D961A000C5439 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C4957FC21F6D966D000C5439 /* RoundButton.swift */,
+				C4CB62FA1F6E8768002D2C6D /* TextFieldStyle.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C4957FC11F6D9623000C5439 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C443EA321F6CEF6E000634E9 /* MainVC.swift */,
+				C4957FC41F6DA9B2000C5439 /* BuyCurrencyVC.swift */,
+				C4957FC61F6DAA16000C5439 /* SellCurrencyVC.swift */,
+				C46FBFAB1F6CF42E006412F1 /* Bank.swift */,
+				C4387F6A1F6EA6AE00E1337F /* InfoDialogVC.swift */,
+				C4387F6C1F6EE51000E1337F /* Notifications.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +152,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C443EA3F1F6CEF6E000634E9 /* Build configuration list for PBXNativeTarget "paysera" */;
 			buildPhases = (
+				A825CDC6C484386DEA772B9A /* [CP] Check Pods Manifest.lock */,
 				C443EA291F6CEF6E000634E9 /* Sources */,
 				C443EA2A1F6CEF6E000634E9 /* Frameworks */,
 				C443EA2B1F6CEF6E000634E9 /* Resources */,
+				B3413AD5DB63C92EFED79D9B /* [CP] Embed Pods Frameworks */,
+				3CDDAE7B1A78CA7FD3FD239D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,13 +215,72 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3CDDAE7B1A78CA7FD3FD239D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-paysera/Pods-paysera-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A825CDC6C484386DEA772B9A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B3413AD5DB63C92EFED79D9B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-paysera/Pods-paysera-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C443EA291F6CEF6E000634E9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C443EA331F6CEF6E000634E9 /* ViewController.swift in Sources */,
+				C4CB62F91F6E5D47002D2C6D /* Preferance.swift in Sources */,
+				C4957FC31F6D966D000C5439 /* RoundButton.swift in Sources */,
+				C4CB62F71F6E5AEA002D2C6D /* AvailableCurrency.swift in Sources */,
+				C443EA331F6CEF6E000634E9 /* MainVC.swift in Sources */,
 				C443EA311F6CEF6E000634E9 /* AppDelegate.swift in Sources */,
+				C4387F6D1F6EE51000E1337F /* Notifications.swift in Sources */,
+				C4957FC91F6DAD90000C5439 /* SupportedCurrency.swift in Sources */,
+				C4CB62F51F6E5A5E002D2C6D /* Currency.swift in Sources */,
+				C4CB62FB1F6E8768002D2C6D /* TextFieldStyle.swift in Sources */,
+				C4957FC71F6DAA16000C5439 /* SellCurrencyVC.swift in Sources */,
+				C46FBFAC1F6CF42E006412F1 /* Bank.swift in Sources */,
+				C4387F6B1F6EA6AE00E1337F /* InfoDialogVC.swift in Sources */,
+				C4957FC51F6DA9B2000C5439 /* BuyCurrencyVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,11 +415,13 @@
 		};
 		C443EA401F6CEF6E000634E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E54111E5A7F2682C579FC78B /* Pods-paysera.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7X5YDTTCET;
 				INFOPLIST_FILE = paysera/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = captainOfM.paysera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -287,11 +432,13 @@
 		};
 		C443EA411F6CEF6E000634E9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2EF1E99CAEFA7382BAC1E43 /* Pods-paysera.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7X5YDTTCET;
 				INFOPLIST_FILE = paysera/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = captainOfM.paysera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
