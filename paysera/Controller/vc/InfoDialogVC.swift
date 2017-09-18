@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+/// Dialog viewController to show information for user.
 class InfoDialogVC: UIViewController {
   
   var dialogMessage: String!
@@ -17,8 +18,6 @@ class InfoDialogVC: UIViewController {
   @IBOutlet weak var dialogView: UIView!
   @IBOutlet weak var messageLA: UILabel!
   @IBOutlet weak var titleLA: UILabel!
-  
-  
   
   @IBAction func ok(_ sender: Any) {
     removeAnimate()
@@ -30,22 +29,29 @@ class InfoDialogVC: UIViewController {
     dialogView.layer.borderColor = UIColor.white.cgColor
     view.backgroundColor = UIColor.black.withAlphaComponent(0.2)
     
-    messageLA.text = dialogMessage
-    titleLA.text = dialogTitle
+    messageLA.text = dialogMessage // what message need to show
+    titleLA.text = dialogTitle // what title need to show
   }
   
   override func viewDidAppear(_ animated: Bool) {
     showAnimate()
   }
-    
-  public func showMe(onViewController: UIViewController, message: String, title: String){
-      let dialog = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "infoDialogVC") as! InfoDialogVC
-      dialog.dialogMessage = message
-      dialog.dialogTitle = title
-      dialog.view.backgroundColor = UIColor.black.withAlphaComponent(0.2)
-      onViewController.present(dialog, animated: false, completion: nil)
-    }
   
+  /// function for show information dialog view
+  ///
+  /// - Parameters:
+  ///   - onViewController: on what view controller need to show this view
+  ///   - message: message in dialog
+  ///   - title: dialog title text
+  public func showMe(onViewController: UIViewController, message: String, title: String){
+    let dialog = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "infoDialogVC") as! InfoDialogVC
+    dialog.dialogMessage = message
+    dialog.dialogTitle = title
+    dialog.view.backgroundColor = UIColor.black.withAlphaComponent(0.2)
+    onViewController.present(dialog, animated: false, completion: nil)
+  }
+  
+  /// animate for dialog present
   private func showAnimate() {
     self.view.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
     self.view.alpha = 0.0;
@@ -55,6 +61,7 @@ class InfoDialogVC: UIViewController {
     });
   }
   
+  /// animate for dialog remove
   private func removeAnimate() {
     UIView.animate(withDuration: 0.25, animations: {
       self.view.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)

@@ -22,6 +22,9 @@ class SellCurrencyVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
   private var tap:UITapGestureRecognizer = UITapGestureRecognizer()
   private let infoDialog = InfoDialogVC()
   
+  /// get currency exchange information
+  ///
+  /// - Parameter sender: button
   @IBAction func exchange(_ sender: Any) {
     let qty = currencyQty.text
     if qty!.characters.count > 0 {
@@ -33,6 +36,9 @@ class SellCurrencyVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
   }
   
+  /// approving curency exchange, exchange currency for free if user have that oportunity or with commsions if don't
+  ///
+  /// - Parameter sender: button
   @IBAction func approve(_ sender: Any) {
     let qty = currencyQty.text
     if qty!.characters.count > 0 {
@@ -40,7 +46,7 @@ class SellCurrencyVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
       let getCurrency = SupportedCurrency.currency[chooseGetCurrency.selectedRow(inComponent: 0)]
       do {
         if preference.getLeftFreeTimes() == 0 {
-          try bank.checkExchangeOpportunityWithCommissions(qty: qty!, fromCurrency: sellCurrency, toCurrency: getCurrency)
+          try bank.checkExchangePosibilityWithCommissions(qty: qty!, fromCurrency: sellCurrency, toCurrency: getCurrency)
           bank.makeExchangeWithCommissions(qty: qty!, from: sellCurrency, to: getCurrency)
         } else {
           try bank.checkExchangeOpportunity(qty: qty!, fromCurrency: sellCurrency, toCurrency: getCurrency)
@@ -70,12 +76,13 @@ class SellCurrencyVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     currencyQty.delegate = self
     currencyResult.delegate = self
+    currencyResult.isUserInteractionEnabled = false
     
     tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
   }
   
   override func viewDidAppear(_ animated: Bool) {
-    initView()
+    chooseSellCurrency.selectRow(1, inComponent: 0, animated: false)
   }
   
   func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -95,6 +102,7 @@ class SellCurrencyVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
   }
   
   func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+     // init how picker view looks.
     let pickerLabel = UILabel()
     pickerLabel.textColor = UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 1.0)
     if pickerView.tag == 1 {
@@ -105,11 +113,6 @@ class SellCurrencyVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     pickerLabel.font = UIFont.boldSystemFont(ofSize: 17)// In this use your custom font
     pickerLabel.textAlignment = NSTextAlignment.center
     return pickerLabel
-  }
-  
-  private func initView() {
-    currencyResult.isUserInteractionEnabled = false
-    chooseSellCurrency.selectRow(1, inComponent: 0, animated: false)
   }
   
   @objc func dismissKeyboard() {

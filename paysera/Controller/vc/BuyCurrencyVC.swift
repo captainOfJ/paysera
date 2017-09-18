@@ -14,7 +14,6 @@ class BuyCurrencyVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
   
   @IBOutlet weak var chooseBuyCurrency: UIPickerView!
   @IBOutlet weak var chooseSettledCurrency: UIPickerView!
-  
   @IBOutlet weak var currencyQty: UITextField!
   @IBOutlet weak var currencyResult: UITextField!
   
@@ -23,6 +22,9 @@ class BuyCurrencyVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
   private let infoDialog = InfoDialogVC()
   private let preference = Preferance()
   
+  /// get currency exchange information
+  ///
+  /// - Parameter sender: button
   @IBAction func exchange(_ sender: Any) {
     let qty = currencyQty.text
     if qty!.count > 0 {
@@ -34,15 +36,17 @@ class BuyCurrencyVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     }
   }
   
+  /// approving curency exchange, exchange currency for free if user have that oportunity or with commsions if don't
+  ///
+  /// - Parameter sender: button
   @IBAction func approved(_ sender: Any) {
     let qty = currencyQty.text
     if qty!.characters.count > 0 {
       let buyCurrency = SupportedCurrency.currency[chooseBuyCurrency.selectedRow(inComponent: 0)]
       let settledCurrency = SupportedCurrency.currency[chooseSettledCurrency.selectedRow(inComponent: 0)]
-      // bank.exchange(qty: qty!, from: settledCurrency, to: buyCurrency)
       do {
         if preference.getLeftFreeTimes() == 0 {
-          try bank.checkExchangeOpportunityWithCommissions(qty: qty!, fromCurrency: settledCurrency, toCurrency: buyCurrency)
+          try bank.checkExchangePosibilityWithCommissions(qty: qty!, fromCurrency: settledCurrency, toCurrency: buyCurrency)
           bank.makeExchangeWithCommissions(qty: qty!, from: settledCurrency, to: buyCurrency)
         } else {
           try bank.checkExchangeOpportunity(qty: qty!, fromCurrency: settledCurrency, toCurrency: buyCurrency)
@@ -72,12 +76,13 @@ class BuyCurrencyVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     
     currencyQty.delegate = self
     currencyResult.delegate = self
+    currencyResult.isUserInteractionEnabled = false
     
     tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
   }
   
   override func viewDidAppear(_ animated: Bool) {
-    initView()
+    chooseBuyCurrency.selectRow(1, inComponent: 0, animated: false)
   }
   
   func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -85,6 +90,7 @@ class BuyCurrencyVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
   }
   
   func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    // set maximum text lenght in textField
     guard let text = textField.text else { return true }
     let newLength = text.characters.count + string.characters.count - range.length
     return newLength <= 10
@@ -103,6 +109,7 @@ class BuyCurrencyVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
   }
   
   func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+    // init how picker view looks.
     let pickerLabel = UILabel()
     pickerLabel.textColor = UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 1.0)
     if pickerView.tag == 1 {
@@ -115,11 +122,7 @@ class BuyCurrencyVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     return pickerLabel
   }
   
-  private func initView() {
-    currencyResult.isUserInteractionEnabled = false
-    chooseBuyCurrency.selectRow(1, inComponent: 0, animated: false)
-  }
-  
+  /// for hide keyboard
   @objc func dismissKeyboard() {
     parent!.view.removeGestureRecognizer(tap)
     view.endEditing(true)
@@ -136,7 +139,6 @@ extension BuyCurrencyVC: BankDelegate {
   }
   
   func didMakeExchangeWithCommissions(commissions: Double, fromCurrency: String, fromAmount: Double, toCurrency: String, toAmount: Double) {
-    //print("result after exchange with commissions: \(amount) \(currency)")
     let commissionsStr = String(format:"%.2f", commissions)
     infoDialog.showMe(onViewController: self, message: "Jūs konvertavote \(fromAmount) \(fromCurrency) į \(toAmount) \(toCurrency). Komisinis mokestis - \(commissionsStr) \(fromCurrency).", title: "KONVERTAVIMAS SEKMINGAS")
     let notifications = Notifications()

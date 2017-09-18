@@ -8,8 +8,8 @@
 
 import Foundation
 
+/// what currency is supported.
 class SupportedCurrency {
-  
   public static let USD = "USD"
   public static let EUR = "EUR"
   public static let JPY = "JPY"

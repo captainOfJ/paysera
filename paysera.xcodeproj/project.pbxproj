@@ -19,7 +19,6 @@
 		C4957FC51F6DA9B2000C5439 /* BuyCurrencyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4957FC41F6DA9B2000C5439 /* BuyCurrencyVC.swift */; };
 		C4957FC71F6DAA16000C5439 /* SellCurrencyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4957FC61F6DAA16000C5439 /* SellCurrencyVC.swift */; };
 		C4957FC91F6DAD90000C5439 /* SupportedCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4957FC81F6DAD90000C5439 /* SupportedCurrency.swift */; };
-		C4CB62F51F6E5A5E002D2C6D /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB62F41F6E5A5E002D2C6D /* Currency.swift */; };
 		C4CB62F71F6E5AEA002D2C6D /* AvailableCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB62F61F6E5AEA002D2C6D /* AvailableCurrency.swift */; };
 		C4CB62F91F6E5D47002D2C6D /* Preferance.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB62F81F6E5D47002D2C6D /* Preferance.swift */; };
 		C4CB62FB1F6E8768002D2C6D /* TextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CB62FA1F6E8768002D2C6D /* TextFieldStyle.swift */; };
@@ -42,7 +41,6 @@
 		C4957FC41F6DA9B2000C5439 /* BuyCurrencyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyCurrencyVC.swift; sourceTree = "<group>"; };
 		C4957FC61F6DAA16000C5439 /* SellCurrencyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellCurrencyVC.swift; sourceTree = "<group>"; };
 		C4957FC81F6DAD90000C5439 /* SupportedCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportedCurrency.swift; sourceTree = "<group>"; };
-		C4CB62F41F6E5A5E002D2C6D /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		C4CB62F61F6E5AEA002D2C6D /* AvailableCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableCurrency.swift; sourceTree = "<group>"; };
 		C4CB62F81F6E5D47002D2C6D /* Preferance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferance.swift; sourceTree = "<group>"; };
 		C4CB62FA1F6E8768002D2C6D /* TextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldStyle.swift; sourceTree = "<group>"; };
@@ -116,7 +114,6 @@
 			isa = PBXGroup;
 			children = (
 				C4957FC81F6DAD90000C5439 /* SupportedCurrency.swift */,
-				C4CB62F41F6E5A5E002D2C6D /* Currency.swift */,
 				C4CB62F61F6E5AEA002D2C6D /* AvailableCurrency.swift */,
 				C4CB62F81F6E5D47002D2C6D /* Preferance.swift */,
 			);
@@ -135,14 +132,22 @@
 		C4957FC11F6D9623000C5439 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C4BDD19B1F6FAD14004A2E46 /* vc */,
+				C4387F6C1F6EE51000E1337F /* Notifications.swift */,
+				C46FBFAB1F6CF42E006412F1 /* Bank.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C4BDD19B1F6FAD14004A2E46 /* vc */ = {
+			isa = PBXGroup;
+			children = (
 				C443EA321F6CEF6E000634E9 /* MainVC.swift */,
 				C4957FC41F6DA9B2000C5439 /* BuyCurrencyVC.swift */,
 				C4957FC61F6DAA16000C5439 /* SellCurrencyVC.swift */,
-				C46FBFAB1F6CF42E006412F1 /* Bank.swift */,
 				C4387F6A1F6EA6AE00E1337F /* InfoDialogVC.swift */,
-				C4387F6C1F6EE51000E1337F /* Notifications.swift */,
 			);
-			path = Controller;
+			path = vc;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,7 +280,6 @@
 				C443EA311F6CEF6E000634E9 /* AppDelegate.swift in Sources */,
 				C4387F6D1F6EE51000E1337F /* Notifications.swift in Sources */,
 				C4957FC91F6DAD90000C5439 /* SupportedCurrency.swift in Sources */,
-				C4CB62F51F6E5A5E002D2C6D /* Currency.swift in Sources */,
 				C4CB62FB1F6E8768002D2C6D /* TextFieldStyle.swift in Sources */,
 				C4957FC71F6DAA16000C5439 /* SellCurrencyVC.swift in Sources */,
 				C46FBFAC1F6CF42E006412F1 /* Bank.swift in Sources */,

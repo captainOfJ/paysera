@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-//@IBDesignable
+@IBDesignable
 class RoundButton: UIButton {
   
   override func awakeFromNib() {
@@ -23,7 +23,6 @@ class RoundButton: UIButton {
   
   override func layoutSubviews() {
     super.layoutSubviews()
-    
     layer.cornerRadius = self.bounds.size.width * 0.5
   }
   

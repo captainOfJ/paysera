@@ -10,12 +10,13 @@ import UIKit
 import RealmSwift
 
 class MainVC: UIViewController {
+  
   private let exchange = Bank()
   private let preferanceControl = Preferance()
+  
   @IBOutlet weak var eurAvailable: UILabel!
   @IBOutlet weak var usdAvailable: UILabel!
   @IBOutlet weak var jpyAvailable: UILabel!
-  
   @IBOutlet weak var buyCurrencyView: UIView!
   @IBOutlet weak var sellCurrencyView: UIView!
   
@@ -39,17 +40,22 @@ class MainVC: UIViewController {
     buyCurrencyView.isHidden = false
     sellCurrencyView.isHidden = true
     let notifications = Notifications()
-    notifications.addCurrencyUpdatedObserver(conttroller: self, selector: #selector(currencyWasUpdated))
+    notifications.addCurrencyUpdatedObserver(conttroller: self, selector: #selector(showData))
+    
+    //check or this is first app launch
     let isLaunched = preferanceControl.getOrAppLaunchedBefore();
     if !isLaunched {
       initFirstLaunch()
     }
     showData();
   }
-
+  
+  /// init application data in first launched, add currency values to database and set
+  /// free exchanges posibilitys times and save to UsersDefaults.
   private func initFirstLaunch() {
     preferanceControl.setAppLaunched()
     preferanceControl.setLeftFreeTimes(times: 5)
+    
     let eurCurrency = AvailableCurrency()
     eurCurrency.name = SupportedCurrency.EUR
     eurCurrency.amount = 1000.00
@@ -59,6 +65,7 @@ class MainVC: UIViewController {
     let jpyCurrency = AvailableCurrency()
     jpyCurrency.name = SupportedCurrency.JPY
     jpyCurrency.amount = 0.00
+    
     let realm = try! Realm()
     try! realm.write {
       realm.add(eurCurrency)
@@ -67,7 +74,8 @@ class MainVC: UIViewController {
     }
   }
   
-  private func showData() {
+  /// Show currency data from database.
+  @objc private func showData() {
     let realm = try! Realm()
     let availableEur = realm.objects(AvailableCurrency.self).filter("name contains '\(SupportedCurrency.EUR)'").first
     let availableUsd = realm.objects(AvailableCurrency.self).filter("name contains '\(SupportedCurrency.USD)'").first
@@ -79,10 +87,6 @@ class MainVC: UIViewController {
     eurAvailable.text = String(format:"%.2f", eur)
     usdAvailable.text = String(format:"%.2f", usd)
     jpyAvailable.text = String(format:"%.2f", jpy)
-  }
-  
-  @objc private func currencyWasUpdated() {
-   showData()
   }
   
   override func didReceiveMemoryWarning() {

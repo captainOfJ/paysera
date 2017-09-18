@@ -9,7 +9,7 @@
 import RealmSwift
 import Foundation
 
-
+///Realm database object for save availabe currency information.
 class AvailableCurrency: Object {
   @objc dynamic var name = ""
   @objc dynamic var amount = 0.00
